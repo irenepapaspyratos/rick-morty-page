@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<h1>Rick and Morty - Characters</h1>
+
+		<section data-js="tagFilter">
+			<form data-js="filter-form" aria-labeledby="form-heading">
+				<button>Get Data!</button>
+				<fieldset>
+					<legend id="form-heading">Filter by tags:</legend>
+					<input
+						name="tag-filter"
+						value="all"
+						class="tag-input"
+						id="tag-all"
+						type="radio"
+						checked
+					/>
+					<label class="tag-label" for="tag-all">all</label>
+					<input
+						name="tag-filter"
+						value="alive"
+						class="tag-input"
+						id="tag-alive"
+						type="radio"
+					/>
+					<label class="tag-label" for="tag-alive">alive</label>
+					<input
+						name="tag-filter"
+						value="dead"
+						class="tag-input"
+						id="dead"
+						type="radio"
+					/>
+					<label class="tag-label" for="dead">dead</label>
+					<input
+						name="tag-filter"
+						value="dunno"
+						class="tag-input"
+						id="dunno"
+						type="radio"
+					/>
+					<label class="tag-label" for="dunno">dunno</label>
+				</fieldset>
+			</form>
+		</section>
+
+		<section data-js="cardsContainer">
+			<ul
+				aria-live="polite"
+				aria-atomic="true"
+				aria-relevant="additions"
+				role="list"
+				class="card-list"
+				data-js="cards"
+			></ul>
+		</section>
+	</body>
+</html>
