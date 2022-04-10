@@ -3,13 +3,60 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #e0eaf4;
   margin-top: 60px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: larger;
+  color: rgb(66, 66, 66);
+  font-weight: 700;
+  margin: 15px;
+  background-image: url("images/Ohne Titel.png");
+  transition: ease-in-out 0.5s;
+  border-radius: 8px;
+}
+
+button:hover {
+  padding-left: 100px;
+  padding-right: 100px;
+  transition: ease-in-out 0.5s;
+}
+fieldset {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: large;
+  font-weight: bolder;
+  border-radius: 8px;
+  background: rgba(161, 140, 140, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+}
+body {
+  background-image: url("/Users/nilsholthey/Development/muc-web-22-2/rick-morty-page/images/Frame 3.png");
+}
+
 img {
-  width: 5rem;
+  margin-top: 5px;
+  width: 9rem;
   border-radius: 50%;
+  box-shadow: 0 4px 30px rgba(253, 253, 253, 0.1);
 }
 
 .borderRed {
@@ -26,4 +73,25 @@ img {
 
 ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  gap: 5px;
+  margin: 3px;
+  width: 200px;
+  height: 260px;
+  background: rgba(161, 140, 140, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.58);
 }

@@ -73,47 +73,44 @@ const pageUrls = [url];
 let currentFilter = "all";
 
 dataButton.addEventListener("click", (event) => {
-	event.preventDefault();
-	showData();
+  event.preventDefault();
+  showData();
 });
 
 function showData() {
-	let allCards = [];
-	const apiPages = FetchApi(url)
-		.then((data) => {
-			let pages = data.info.pages;
-			let i = 2;
+  let allCards = [];
+  FetchApi(url)
+    .then((data) => {
+      let pages = data.info.pages;
+      let i = 2;
 
-			while (i <= pages) {
-				const nextPage = url + "?page=" + i;
-				pageUrls.push(nextPage);
-				i++;
-			}
+      while (i <= pages) {
+        const nextPage = url + "?page=" + i;
+        pageUrls.push(nextPage);
+        i++;
+      }
 
-			return pageUrls;
-		})
-		.then((pageArray) => {
-			pageArray.forEach((page) => {
-				FetchApi(page)
-					.then((pageData) => {
-						pageData.results.forEach((character) => {
-							allCards.push(character);
-						});
+      return pageUrls;
+    })
+    .then((pageArray) => {
+      pageArray.forEach((page) => {
+        FetchApi(page)
+          .then((pageData) => {
+            pageData.results.forEach((character) => {
+              allCards.push(character);
+            });
+            return allCards;
+          })
+          .then((allCharacters) => {
+            RenderCards(allCharacters, cardsContainer, currentFilter);
+          });
+      });
+    });
 
-						return allCards;
-					})
-					.then((allCharacters) => {
-						RenderCards(allCharacters, cardsContainer, currentFilter);
+  filterForm.removeAttribute("hidden");
 
-						return true;
-					});
-			});
-		});
-
-	filterForm.removeAttribute("hidden");
-
-	filterForm.addEventListener("change", () => {
-		currentFilter = filterForm.elements["tag-filter"].value;
-		RenderCards(allCards, cardsContainer, currentFilter);
-	});
+  filterForm.addEventListener("change", () => {
+    currentFilter = filterForm.elements["tag-filter"].value;
+    RenderCards(allCards, cardsContainer, currentFilter);
+  });
 }
