@@ -6,3 +6,24 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.borderRed {
+  border: 5px solid red;
+}
+
+.borderGreen {
+  border: 5px solid green;
+}
+
+.borderGrey {
+  border: 5px solid grey;
+}
+
+ul {
+  list-style: none;
+}
