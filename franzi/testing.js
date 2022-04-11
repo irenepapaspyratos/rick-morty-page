@@ -27,7 +27,7 @@ filterForm.addEventListener("submit", (event) => {
   });
 });
 
-// die gespeicherten Daten von renderRickMorty speichere ich im Cards-Parameter
+// die gespeicherten Daten von renderRickMorty speichere ich im 'Cards-Parameter'
 function renderRickMorty(cards) {
   container.innerHTML = ""; // ich leere meinen Container
   let filtered = []; // leeres Array initialisieren
@@ -51,6 +51,7 @@ function renderRickMorty(cards) {
     container.appendChild(listElement); // li/img-element zu Conainer hinzufügen
   });
 }
+
 /* 
 getCardStatus(card)
 function getCardStatus(card) {
