@@ -27,7 +27,6 @@ filterForm.addEventListener("submit", (event) => {
   });
 });
 
-// die gespeicherten Daten von renderRickMorty speichere ich im 'Cards-Parameter'
 function renderRickMorty(cards) {
   container.innerHTML = ""; // ich leere meinen Container
   let filtered = []; // leeres Array initialisieren
@@ -39,7 +38,7 @@ function renderRickMorty(cards) {
     const image = document.createElement("img"); // neues img-element erzeugen
     image.src = card.image; // img-element benennen
     image.classList.add(
-      // img-element eine klasse vergeben => in einer if--else function
+      // img-element eine klasse vergeben => eine if--else function anwenden
       card.status === "Alive" //wenn status 'Alive' dann 'grün'
         ? "borderGreen"
         : card.status === "Dead" // wenn status 'Dead' dann 'rot'
